@@ -24,16 +24,16 @@
         <div class="col-md-4">
             <h2>More</h2>
             <p>
-                Something you want to put on home page ......
+                Learn more about SU alumni ......
             </p>
             <p>
                 <a class="btn btn-default" href="http://www.seattleu.edu/alumni">Learn more &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Web Map</h2>
+            <h2>More</h2>
             <p>
-                About the site structure....
+                Learn more about SU Student Life....
             </p>
             <p>
                 <a class="btn btn-default" href="http://www.seattleu.edu/student-life">Learn more &raquo;</a>
