@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="eServeSU.Site" %>
+<%@ Register TagPrefix="aspdd" Namespace="Saplin.Controls" Assembly="DropDownCheckBoxes" %>
+<%@ Register TagPrefix="ajaxToolkit" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=4.5.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - eServe @ Seattle University</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <ajaxToolkit:ToolkitScriptManager runat="server">
+            <Scripts>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="jquery" />
+                <%--<asp:ScriptReference Name="jquery.ui.combined" />--%>
+                <asp:ScriptReference Name="WebForms.js" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </ajaxToolkit:ToolkitScriptManager>
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">eServe @ Seattleu</a><a href="fonts/"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <asp:HyperLink runat="server" href="/Opportunity/OpportunityList.aspx" ID="hlOpp" Visible="False" class="navbar-brand" ForeColor ="#fab82f">Opportunity</asp:HyperLink>
+                            <asp:HyperLink runat="server" href="/CommunityPartnerContent/Opportunities.aspx" ID="h1Opportunities" Visible="False" class="navbar-brand" ForeColor ="#fab82f">Opportunities</asp:HyperLink>
+                            <asp:HyperLink runat="server" href="/CommunityPartnerContent/ReadEvaluation.aspx" ID="h1ReadEvaluation" Visible="False" class="navbar-brand" ForeColor ="#fab82f">ReadEvaluation</asp:HyperLink>
+                            <asp:HyperLink runat="server" href="/CommunityPartnerContent/CommunityPartnerView.aspx" ID="h1CommunityPartnerView" Visible="False" class="navbar-brand" ForeColor ="#fab82f">Profile</asp:HyperLink>
+                            <asp:HyperLink runat="server" href="/CommunityPartnerContent/CommunityPartnerStudentView.aspx" ID="h1CommunityPartnerStudentView" Visible="False" class="navbar-brand" ForeColor ="#fab82f">Students</asp:HyperLink>
+                            <asp:HyperLink runat="server" href="/Student/StudentProfile.aspx" ID="hlStudentProfile" Visible="False" class="navbar-brand" ForeColor ="#fab82f">Profile</asp:HyperLink>
+                            <asp:HyperLink runat="server" href="/Student/StudentRegistered.aspx" ID="hlStudentRegistered" Visible="False" class="navbar-brand" ForeColor ="#fab82f">My Opportunities</asp:HyperLink>                            
+                            <asp:HyperLink runat="server" href="/Student/StudentRegistration.aspx" ID="hlStudentRegistration" Visible="False" class="navbar-brand" ForeColor ="#fab82f">Sign Up</asp:HyperLink>   
+                            <asp:HyperLink runat="server" href="/Admin/AdminProfile.aspx" ID="hlAdmin" Visible="False" class="navbar-brand"  ForeColor ="#fab82f">Admin</asp:HyperLink>
+                            <asp:HyperLink runat="server" href="/Admin/AdminCourseListReport.aspx" ID="hlAdminCourse" Visible="False" class="navbar-brand"  ForeColor ="#fab82f">Report</asp:HyperLink>
+                            <asp:HyperLink runat="server" href="/Faculty/FacultyOpportunityListView.aspx" ID="hlFaculty" Visible="False" class="navbar-brand"  ForeColor ="#fab82f">Opportunities</asp:HyperLink>
+                            <asp:HyperLink runat="server" href="/Faculty/FacultyCourseOpportunity.aspx" ID="hlFacultyOpp" Visible="False" class="navbar-brand"  ForeColor ="#fab82f">My students</asp:HyperLink>
+                        </li>
+                        
+                    </ul>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled" ID="lvLogin" >
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">
+                                        <asp:Label ID="lblRegister" runat="server" Text="Register" /></a></li>                                 
+                                <li>     <a runat="server" href="~/Account/Logout">
+                                         <asp:Label ID="lblLogOut" runat="server" Text="Log Out">
+                                    </asp:Label></a></li>
+                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %>!</a></li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                                <li><a runat="server" href="~/Account/Register">
+                                        <asp:Label ID="lblRegister" runat="server" Text="Register" /></a></li>                                 
+                                <li>     <a runat="server" href="~/Account/Logout">
+                                         <asp:Label ID="lblLogOut" runat="server" Text="Log Out">
+                                    </asp:Label></a></li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - eServe @ Seattleu</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
+
