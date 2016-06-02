@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="eServeSU._Default" %>
+<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="eServeSU._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -6,6 +6,9 @@
         <div class="col-md-4">
             <img src="Img\ServeLocalLARGE.png" width="300" height="300" />
         </div>
+
+
+
         <div class="col-md-4">
             <img src="Img\ServeLocalLARGE.jpg"  width="550" height="400" />
         </div>
@@ -24,20 +27,34 @@
         <div class="col-md-4">
             <h2>More</h2>
             <p>
-                Learn more about SU alumni ......
+                Learn more about SU alumni …..
             </p>
             <p>
                 <a class="btn btn-default" href="http://www.seattleu.edu/alumni">Learn more &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
-            <h2>More</h2>
+            <h2>Web Map</h2>
             <p>
-                Learn more about SU Student Life....
+                Learn more about SU student life….
             </p>
             <p>
                 <a class="btn btn-default" href="http://www.seattleu.edu/student-life">Learn more &raquo;</a>
             </p>
         </div>
+
+        <div class="col-md-4">
+            <h2>Opportunities</h2>
+            <p>
+                Show opportunities
+            </p>
+            <p>
+                <asp:HyperLink runat="server" href="/Opportunity/OpportunityNew.aspx">Show Opportunities</asp:HyperLink>
+                
+            </p>
+        </div>
+
+        
+
     </div>
 </asp:Content>
